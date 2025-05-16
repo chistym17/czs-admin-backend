@@ -4,8 +4,8 @@ const cloudinary = require("./cloudinary");
 const storage = new CloudinaryStorage({
   cloudinary,
   params: {
-    folder: "team-player-pics",
-    allowed_formats: ["jpg", "jpeg", "png"],
+    folder: "fixtures",
+    allowed_formats: ["jpg", "jpeg"],
   },
 });
 
