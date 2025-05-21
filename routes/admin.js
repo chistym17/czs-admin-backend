@@ -10,6 +10,9 @@ const ADMIN_TOKEN = process.env.ADMIN_TOKEN || "admin123";
 router.post("/login", (req, res) => {
   const { email, pass } = req.body;
 
+  console.log(email, pass);
+  console.log(ADMIN_EMAIL, ADMIN_PASS);
+
   if (email === ADMIN_EMAIL && pass === ADMIN_PASS) {
     res.cookie("admin-auth", ADMIN_TOKEN, {
       httpOnly: true,

@@ -9,6 +9,7 @@ const connectDB = require("./db");
 const fixtureRoutes = require("./routes/fixtureRoutes");
 const resultRoutes = require("./routes/resultRoutes");
 const adminRoutes = require("./routes/admin");
+const teamRoutes = require("./routes/teamRoutes");
 
 const app = express();
 
@@ -29,6 +30,7 @@ connectDB();
 app.use("/", fixtureRoutes);
 app.use("/", resultRoutes);
 app.use("/admin", adminRoutes);
+app.use("/api", teamRoutes);
 
 app.listen(5000, () => {
   console.log("Admin backend running on http://localhost:5000");
