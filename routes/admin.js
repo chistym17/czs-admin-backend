@@ -11,15 +11,15 @@ router.post("/login", (req, res) => {
 
   if (email === ADMIN_EMAIL && pass === ADMIN_PASS) {
  
-    return res.status(200).json({ message: "Login successful" });
+    return res.status(200).json({ success: true, message: "Login successful" });
   }
 
-  return res.status(401).json({ message: "Invalid credentials" });
+  return res.status(401).json({ success: false, message: "Invalid credentials" });
 });
 
 // ✅ Example protected route
 router.get("/dashboard", (req, res) => {
-  return res.status(200).json({ message: "Welcome to admin dashboard" });
+  return res.status(200).json({ success: true, message: "Welcome to admin dashboard" });
 });
 
 module.exports = router;
