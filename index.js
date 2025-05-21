@@ -13,9 +13,8 @@ const teamRoutes = require("./routes/teamRoutes");
 
 const app = express();
 
-// ✅ Only use CORS with proper options
 const corsOptions = {
-  origin: "http://localhost:3000", // exact frontend origin
+  origin: ["http://localhost:3000", "https://www.czssupercup.com"], 
   credentials: true, // allow credentials (cookies, etc)
 };
 app.use(cors(corsOptions));
