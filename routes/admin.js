@@ -14,9 +14,9 @@ router.post("/login", (req, res) => {
   if (email === ADMIN_EMAIL && pass === ADMIN_PASS) {
     res.cookie("admin-auth", ADMIN_TOKEN, {
       httpOnly: true,
-      sameSite: "none",
       secure: true,
-      domain: "czssupercup.com",
+      sameSite: "none",
+      domain: "czs-admin.onrender.com",
       maxAge: 24 * 60 * 60 * 1000,
     });
 
