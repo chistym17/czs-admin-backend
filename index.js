@@ -14,9 +14,9 @@ const teamRoutes = require("./routes/teamRoutes");
 const app = express();
 
 const corsOptions = {
-  origin:'*',
+  origin: 'https://www.czssupercup.com',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'Cookie']
+  allowedHeaders: ['Content-Type', 'Authorization']
 };
 app.use(cors(corsOptions));
 

@@ -95,7 +95,7 @@ router.post("/teams/:teamId/players/:playerId/goals", async (req, res) => {
   try {
     const { teamId, playerId } = req.params;
 
-    
+
     const { goals } = req.body;
 
     if (!mongoose.Types.ObjectId.isValid(teamId) || !mongoose.Types.ObjectId.isValid(playerId)) {
@@ -113,7 +113,6 @@ router.post("/teams/:teamId/players/:playerId/goals", async (req, res) => {
     }
 
     const team = await Team.findById(teamId);
-    console.log(team);
     if (!team) {
       return res.status(404).json({
         success: false,
