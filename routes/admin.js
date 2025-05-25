@@ -17,7 +17,6 @@ router.post("/login", (req, res) => {
   return res.status(401).json({ success: false, message: "Invalid credentials" });
 });
 
-// ✅ Example protected route
 router.get("/dashboard", (req, res) => {
   return res.status(200).json({ success: true, message: "Welcome to admin dashboard" });
 });

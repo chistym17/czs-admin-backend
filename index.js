@@ -14,7 +14,7 @@ const teamRoutes = require("./routes/teamRoutes");
 const app = express();
 
 const corsOptions = {
-  origin: 'https://www.czssupercup.com',
+  origin: '*',  
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 };
@@ -22,6 +22,10 @@ app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use(cookieParser());
+
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok', message: 'Server is healthy' });
+});
 
 // Connect DB
 connectDB();
